@@ -31,7 +31,9 @@ public class Professor extends Pessoa{
         return new Turma(disciplina, this);
     }
     public Nota lancarNota(Aluno aluno, double valor, String descricao){
-        return new Nota(aluno, valor, descricao);
+        if(valor >= 0 && valor <= 10)  return new Nota(aluno, valor, descricao);
+        System.out.println("Nota invalida");
+        return null;
     }
 
     public void exibirDados(){
